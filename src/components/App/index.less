@@ -1,0 +1,75 @@
+/*定义整体layout的样式, 直接从antd官网copy的, 稍微修改了一些*/
+
+#root {
+  height: 100%;
+}
+
+.ant-layout-base {
+  position: relative;
+  height: 100%;
+}
+
+.ant-layout-main-base {
+  transition: all 0.3s ease;
+  overflow: auto;
+  height: 100%;
+}
+
+.ant-layout-base .ant-layout-main {
+  margin-left: 224px; // 正常侧边栏的宽度
+  .ant-layout-main-base;
+}
+
+.ant-layout-base .ant-layout-main-collapse {
+  margin-left: 64px; // 侧边栏折叠时的宽度
+  .ant-layout-main-base;
+}
+
+.ant-layout-base .ant-layout-container {
+  margin: 24px 16px;
+  background: #fff;
+  padding: 24px;
+}
+
+.ant-layout-sidebar-base {
+  background: #404040;
+  position: absolute;
+  overflow: auto;
+  padding-bottom: 24px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.ant-layout-sidebar {
+  width: 224px; // 正常的侧边栏宽度
+  .ant-layout-sidebar-base; // less的mixin很好用, 代码复用的几种方式: 继承 vs mixin vs 组合
+}
+
+.ant-layout-sidebar-collapse {
+  width: 64px; // 侧边栏折叠时的宽度
+  .ant-layout-sidebar-base;
+}
+
+/* 定义侧边栏正常显示时的样式 - begin */
+.ant-layout-sidebar > .ant-menu {
+  margin-bottom: 20px;
+}
+
+.ant-layout-sidebar > .ant-menu > .ant-menu-item {
+  margin: 16px 0;
+}
+
+.ant-layout-sidebar > .ant-menu > .ant-menu-item .nav-text {
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+.ant-layout-sidebar > .ant-menu .invisible-nav-text {
+  font-size: 0px;
+}
+
+.ant-layout-sidebar > .ant-menu > .ant-menu-item > .anticon {
+  transition: font-size .3s;
+}
+
+/* 定义侧边栏正常显示时的样式 - end */
