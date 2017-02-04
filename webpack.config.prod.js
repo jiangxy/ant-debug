@@ -13,7 +13,6 @@ module.exports = {
   devtool: 'cheap-module-source-map',
 
   entry: [
-    'babel-polyfill',
     './src/index.js',
   ],
 
@@ -62,7 +61,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
 
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      //'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV === 'production' ? 'false' : 'true')),
     }),
   ],
